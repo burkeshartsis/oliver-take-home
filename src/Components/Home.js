@@ -11,7 +11,6 @@ const Feed = styled.ul`
   flex-wrap: wrap;
   gap: 1rem;
   list-style: none;
-  margin: 0 auto;
   padding: 1rem;
 
   @media (max-width: 385px) {

@@ -17,6 +17,11 @@ const Image = styled.img`
   background: #ccc;
 `;
 
+const Page = styled.article`
+  max-width: 1440px;
+  margin: 0 auto;
+`;
+
 const Title = styled.h1`
   font-size: 3rem;
   line-height: 2rem;
@@ -26,7 +31,7 @@ const Product = () => {
   const { data: product, isLoading: isLoadingProduct } = useProduct();
 
   return (
-    <article>
+    <Page>
       {isLoadingProduct ? (
         <LoadingIndicator />
       ) : (
@@ -40,7 +45,7 @@ const Product = () => {
           </Content>
         </>
       )}
-    </article>
+    </Page>
   );
 };
 
