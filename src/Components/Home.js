@@ -7,10 +7,20 @@ import ProductCard from './ui-kit/ProductCard';
 
 const Feed = styled.ul`
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 1rem;
   list-style: none;
+  margin: 0 auto;
   padding: 1rem;
+
+  @media (max-width: 385px) {
+    flex-direction: column;
+  }
+`;
+
+const FeedItem = styled.li`
+  max-width: 360px;
 `;
 
 const StyledLink = styled(Link)`
@@ -28,7 +38,7 @@ const Home = () => {
           <LoadingIndicator />
         ) : (
           products.map((product) => (
-            <li>
+            <FeedItem>
               <StyledLink to={`/product/${product.id}`}>
                 <ProductCard
                   imageSrc={'https://source.unsplash.com/random/900x900?furniture'}
@@ -36,7 +46,7 @@ const Home = () => {
                   title={product.name}
                 />
               </StyledLink>
-            </li>
+            </FeedItem>
           ))
         )}
       </Feed>
